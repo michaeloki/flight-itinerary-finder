@@ -24,9 +24,6 @@ export function getFlightInfo(tickets: ({
                 takeOffPoints.has(ticket.destination) &&
                 result[result.length - 1] !== ticket.destination
             ) {
-                if (result[result.length - 1] !== ticket.source) {
-                    result.push(ticket.source);
-                }
                 if (result[result.length - 1] !== ticket.destination) {
                     result.push(ticket.destination);
                 }
