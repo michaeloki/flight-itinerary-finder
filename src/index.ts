@@ -20,14 +20,17 @@ export function getFlightInfo(tickets: ({
 
         //get the inner elements
         for (const ticket of tickets) {
-            if (
-                takeOffPoints.has(ticket.destination) &&
-                result[result.length - 1] !== ticket.destination
-            ) {
-                if (result[result.length - 1] !== ticket.destination) {
-                    result.push(ticket.destination);
-                }
-            }
+        if (
+          takeOffPoints.has(ticket.destination) &&
+          !result[result.length - 1] !== ticket.destination
+        ) {
+          if (
+            result[result.length - 1] !== ticket.source &&
+            !result.includes(ticket.source)
+          ) {
+            result.push(ticket.source);
+          }
+        }
         }
 
         //find the final node
